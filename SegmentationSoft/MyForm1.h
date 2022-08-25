@@ -157,10 +157,6 @@ namespace SegmentationSoft {
 			this->lb_saida->Size = System::Drawing::Size(197, 238);
 			this->lb_saida->TabIndex = 4;
 			// 
-			// saveFileDialog1
-			// 
-			this->saveFileDialog1->InitialDirectory = L"./";
-			// 
 			// MyForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -187,15 +183,17 @@ namespace SegmentationSoft {
 	}
 	private: System::Void btn_adicionar_Click(System::Object^ sender, System::EventArgs^ e) {
 		Stream^ myStream;
+
+
 		SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
-		saveFileDialog1->Filter = "arquivos de imagem |*.jpg|*.bmp|*.png|*.gif";
-		saveFileDialog1->FilterIndex = 2;
-		saveFileDialog1->RestoreDirectory = true;
-		//if (saveFileDialog1->ShowDialog() == System::) {
-			//if ((myStream = saveFileDialog1->OpenFile()) != nullptr) {
-				//myStream->Close();
-			//}
-		//}
+		saveFileDialog1->Filter = "Imagem (*.jpg)|*.jpg";
+		//saveFileDialog1->FilterIndex = 2;
+		
+		if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+			if ((myStream = saveFileDialog1->OpenFile()) != nullptr) {
+				myStream->Close();
+			}
+		}
 	}
 };
 }

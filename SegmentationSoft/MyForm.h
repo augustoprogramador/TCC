@@ -169,7 +169,7 @@ namespace SegmentationSoft {
 			this->ClientSize = System::Drawing::Size(997, 655);
 			this->Controls->Add(this->sc_tela_principal);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"Segmentation Soft";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->sc_tela_principal->Panel1->ResumeLayout(false);
 			this->sc_tela_principal->Panel1->PerformLayout();
@@ -189,7 +189,6 @@ namespace SegmentationSoft {
 			menu_ativo->Controls->Add(form);
 			form->Height = sc_tela_principal->Panel2->Height;
 			form->Show();
-			MessageBox::Show(form->Controls->Count.ToString());
 		}
 		private: System::Void lbl_dataset_Click(System::Object^ sender, System::EventArgs^ e) {
 		}
