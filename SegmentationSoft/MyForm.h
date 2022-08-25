@@ -1,0 +1,197 @@
+#pragma once
+#include "MyForm1.h"
+
+namespace SegmentationSoft {
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+
+	/// <summary>
+	/// Sumário para MyForm
+	/// </summary>
+	public ref class MyForm : public System::Windows::Forms::Form
+	{
+		public:
+		MyForm(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: Adicione o código do construtor aqui
+			//
+		}
+
+		protected:
+		/// <summary>
+		/// Limpar os recursos que estão sendo usados.
+		/// </summary>
+		~MyForm()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+	private: System::Windows::Forms::SplitContainer^ sc_tela_principal;
+	protected:
+
+		protected:
+		private: System::Windows::Forms::Label^ lbl_algoritmos;
+		private: System::Windows::Forms::Label^ lbl_configs;
+		private: System::Windows::Forms::Label^ lbl_dataset;
+		private: System::Windows::Forms::Label^ lbl_execucao;
+	private: System::Windows::Forms::Panel^ menu_ativo;
+
+
+
+		private:
+		/// <summary>
+		/// Variável de designer necessária.
+		/// </summary>
+		System::ComponentModel::Container ^components;
+
+		#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Método necessário para suporte ao Designer - não modifique 
+		/// o conteúdo deste método com o editor de código.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			this->sc_tela_principal = (gcnew System::Windows::Forms::SplitContainer());
+			this->lbl_configs = (gcnew System::Windows::Forms::Label());
+			this->lbl_dataset = (gcnew System::Windows::Forms::Label());
+			this->lbl_execucao = (gcnew System::Windows::Forms::Label());
+			this->lbl_algoritmos = (gcnew System::Windows::Forms::Label());
+			this->menu_ativo = (gcnew System::Windows::Forms::Panel());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->sc_tela_principal))->BeginInit();
+			this->sc_tela_principal->Panel1->SuspendLayout();
+			this->sc_tela_principal->Panel2->SuspendLayout();
+			this->sc_tela_principal->SuspendLayout();
+			this->SuspendLayout();
+			// 
+			// sc_tela_principal
+			// 
+			this->sc_tela_principal->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->sc_tela_principal->Location = System::Drawing::Point(0, 0);
+			this->sc_tela_principal->Name = L"sc_tela_principal";
+			// 
+			// sc_tela_principal.Panel1
+			// 
+			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_configs);
+			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_dataset);
+			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_execucao);
+			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_algoritmos);
+			// 
+			// sc_tela_principal.Panel2
+			// 
+			this->sc_tela_principal->Panel2->Controls->Add(this->menu_ativo);
+			this->sc_tela_principal->Size = System::Drawing::Size(997, 655);
+			this->sc_tela_principal->SplitterDistance = 316;
+			this->sc_tela_principal->TabIndex = 0;
+			// 
+			// lbl_configs
+			// 
+			this->lbl_configs->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->lbl_configs->AutoSize = true;
+			this->lbl_configs->BackColor = System::Drawing::SystemColors::Control;
+			this->lbl_configs->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbl_configs->Location = System::Drawing::Point(77, 444);
+			this->lbl_configs->Margin = System::Windows::Forms::Padding(0);
+			this->lbl_configs->Name = L"lbl_configs";
+			this->lbl_configs->Size = System::Drawing::Size(99, 24);
+			this->lbl_configs->TabIndex = 4;
+			this->lbl_configs->Text = L"Configs.";
+			// 
+			// lbl_dataset
+			// 
+			this->lbl_dataset->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->lbl_dataset->AutoSize = true;
+			this->lbl_dataset->BackColor = System::Drawing::SystemColors::Control;
+			this->lbl_dataset->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbl_dataset->Location = System::Drawing::Point(77, 123);
+			this->lbl_dataset->Margin = System::Windows::Forms::Padding(0);
+			this->lbl_dataset->Name = L"lbl_dataset";
+			this->lbl_dataset->Size = System::Drawing::Size(93, 24);
+			this->lbl_dataset->TabIndex = 3;
+			this->lbl_dataset->Text = L"Dataset";
+			this->lbl_dataset->Click += gcnew System::EventHandler(this, &MyForm::lbl_dataset_Click);
+			// 
+			// lbl_execucao
+			// 
+			this->lbl_execucao->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->lbl_execucao->AutoSize = true;
+			this->lbl_execucao->BackColor = System::Drawing::SystemColors::Control;
+			this->lbl_execucao->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbl_execucao->Location = System::Drawing::Point(77, 182);
+			this->lbl_execucao->Margin = System::Windows::Forms::Padding(0);
+			this->lbl_execucao->Name = L"lbl_execucao";
+			this->lbl_execucao->Size = System::Drawing::Size(114, 24);
+			this->lbl_execucao->TabIndex = 2;
+			this->lbl_execucao->Text = L"Execução";
+			// 
+			// lbl_algoritmos
+			// 
+			this->lbl_algoritmos->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->lbl_algoritmos->AutoSize = true;
+			this->lbl_algoritmos->BackColor = System::Drawing::SystemColors::Control;
+			this->lbl_algoritmos->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->lbl_algoritmos->Location = System::Drawing::Point(77, 71);
+			this->lbl_algoritmos->Margin = System::Windows::Forms::Padding(0);
+			this->lbl_algoritmos->Name = L"lbl_algoritmos";
+			this->lbl_algoritmos->Size = System::Drawing::Size(130, 24);
+			this->lbl_algoritmos->TabIndex = 0;
+			this->lbl_algoritmos->Text = L"Algoritmos";
+			this->lbl_algoritmos->Click += gcnew System::EventHandler(this, &MyForm::lbl_algoritmos_Click);
+			// 
+			// menu_ativo
+			// 
+			this->menu_ativo->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->menu_ativo->Location = System::Drawing::Point(0, 0);
+			this->menu_ativo->Name = L"menu_ativo";
+			this->menu_ativo->Size = System::Drawing::Size(677, 655);
+			this->menu_ativo->TabIndex = 0;
+			// 
+			// MyForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(997, 655);
+			this->Controls->Add(this->sc_tela_principal);
+			this->Name = L"MyForm";
+			this->Text = L"MyForm";
+			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			this->sc_tela_principal->Panel1->ResumeLayout(false);
+			this->sc_tela_principal->Panel1->PerformLayout();
+			this->sc_tela_principal->Panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->sc_tela_principal))->EndInit();
+			this->sc_tela_principal->ResumeLayout(false);
+			this->ResumeLayout(false);
+
+		}
+		#pragma endregion
+		private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		}
+		private: System::Void lbl_algoritmos_Click(System::Object^ sender, System::EventArgs^ e) {
+			MyForm1^ form = gcnew MyForm1();
+			menu_ativo->Controls->Clear();
+			form->TopLevel = false;
+			menu_ativo->Controls->Add(form);
+			form->Height = sc_tela_principal->Panel2->Height;
+			form->Show();
+			MessageBox::Show(form->Controls->Count.ToString());
+		}
+		private: System::Void lbl_dataset_Click(System::Object^ sender, System::EventArgs^ e) {
+		}
+	};
+}
