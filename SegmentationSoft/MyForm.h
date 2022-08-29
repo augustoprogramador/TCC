@@ -41,7 +41,8 @@ namespace SegmentationSoft {
 		protected:
 		private: System::Windows::Forms::Label^ lbl_algoritmos;
 		private: System::Windows::Forms::Label^ lbl_configs;
-		private: System::Windows::Forms::Label^ lbl_dataset;
+	private: System::Windows::Forms::Label^ lbl_imagem;
+
 		private: System::Windows::Forms::Label^ lbl_execucao;
 	private: System::Windows::Forms::Panel^ menu_ativo;
 
@@ -62,7 +63,7 @@ namespace SegmentationSoft {
 		{
 			this->sc_tela_principal = (gcnew System::Windows::Forms::SplitContainer());
 			this->lbl_configs = (gcnew System::Windows::Forms::Label());
-			this->lbl_dataset = (gcnew System::Windows::Forms::Label());
+			this->lbl_imagem = (gcnew System::Windows::Forms::Label());
 			this->lbl_execucao = (gcnew System::Windows::Forms::Label());
 			this->lbl_algoritmos = (gcnew System::Windows::Forms::Label());
 			this->menu_ativo = (gcnew System::Windows::Forms::Panel());
@@ -81,7 +82,7 @@ namespace SegmentationSoft {
 			// sc_tela_principal.Panel1
 			// 
 			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_configs);
-			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_dataset);
+			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_imagem);
 			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_execucao);
 			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_algoritmos);
 			// 
@@ -107,21 +108,21 @@ namespace SegmentationSoft {
 			this->lbl_configs->TabIndex = 4;
 			this->lbl_configs->Text = L"Configs.";
 			// 
-			// lbl_dataset
+			// lbl_imagem
 			// 
-			this->lbl_dataset->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+			this->lbl_imagem->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->lbl_dataset->AutoSize = true;
-			this->lbl_dataset->BackColor = System::Drawing::SystemColors::Control;
-			this->lbl_dataset->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_imagem->AutoSize = true;
+			this->lbl_imagem->BackColor = System::Drawing::SystemColors::Control;
+			this->lbl_imagem->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->lbl_dataset->Location = System::Drawing::Point(77, 123);
-			this->lbl_dataset->Margin = System::Windows::Forms::Padding(0);
-			this->lbl_dataset->Name = L"lbl_dataset";
-			this->lbl_dataset->Size = System::Drawing::Size(93, 24);
-			this->lbl_dataset->TabIndex = 3;
-			this->lbl_dataset->Text = L"Dataset";
-			this->lbl_dataset->Click += gcnew System::EventHandler(this, &MyForm::lbl_dataset_Click);
+			this->lbl_imagem->Location = System::Drawing::Point(77, 123);
+			this->lbl_imagem->Margin = System::Windows::Forms::Padding(0);
+			this->lbl_imagem->Name = L"lbl_imagem";
+			this->lbl_imagem->Size = System::Drawing::Size(96, 24);
+			this->lbl_imagem->TabIndex = 3;
+			this->lbl_imagem->Text = L"Imagem";
+			this->lbl_imagem->Click += gcnew System::EventHandler(this, &MyForm::lbl_imagem_Click);
 			// 
 			// lbl_execucao
 			// 
@@ -183,14 +184,20 @@ namespace SegmentationSoft {
 		private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		}
 		private: System::Void lbl_algoritmos_Click(System::Object^ sender, System::EventArgs^ e) {
+			/*MyForm1^ form = gcnew MyForm1();
+			menu_ativo->Controls->Clear();
+			form->TopLevel = false;
+			menu_ativo->Controls->Add(form);
+			form->Height = sc_tela_principal->Panel2->Height;
+			form->Show();*/
+		}
+		private: System::Void lbl_imagem_Click(System::Object^ sender, System::EventArgs^ e) {
 			MyForm1^ form = gcnew MyForm1();
 			menu_ativo->Controls->Clear();
 			form->TopLevel = false;
 			menu_ativo->Controls->Add(form);
 			form->Height = sc_tela_principal->Panel2->Height;
 			form->Show();
-		}
-		private: System::Void lbl_dataset_Click(System::Object^ sender, System::EventArgs^ e) {
 		}
 	};
 }
