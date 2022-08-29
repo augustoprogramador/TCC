@@ -1,6 +1,6 @@
 #pragma once
 
-using namespace System::IO;
+//using namespace System::IO;
 
 namespace SegmentationSoft {
 
@@ -10,6 +10,7 @@ namespace SegmentationSoft {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Sumário para MyForm1
@@ -46,8 +47,9 @@ namespace SegmentationSoft {
 
 	private: System::Windows::Forms::ListBox^ lb_entrada;
 	private: System::Windows::Forms::ListBox^ lb_saida;
-	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
-	private: System::Windows::Forms::FolderBrowserDialog^ folderBrowserDialog1;
+	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
+
+
 
 
 
@@ -73,8 +75,7 @@ namespace SegmentationSoft {
 			this->btn_remover = (gcnew System::Windows::Forms::Button());
 			this->lb_entrada = (gcnew System::Windows::Forms::ListBox());
 			this->lb_saida = (gcnew System::Windows::Forms::ListBox());
-			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
-			this->folderBrowserDialog1 = (gcnew System::Windows::Forms::FolderBrowserDialog());
+			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -157,6 +158,10 @@ namespace SegmentationSoft {
 			this->lb_saida->Size = System::Drawing::Size(197, 238);
 			this->lb_saida->TabIndex = 4;
 			// 
+			// openFileDialog1
+			// 
+			this->openFileDialog1->FileName = L"openFileDialog1";
+			// 
 			// MyForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -183,17 +188,17 @@ namespace SegmentationSoft {
 	}
 	private: System::Void btn_adicionar_Click(System::Object^ sender, System::EventArgs^ e) {
 		Stream^ myStream;
+		openFileDialog1->ShowDialog();
 
-
-		SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
-		saveFileDialog1->Filter = "Imagem (*.jpg)|*.jpg";
-		//saveFileDialog1->FilterIndex = 2;
-		
-		if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
-			if ((myStream = saveFileDialog1->OpenFile()) != nullptr) {
-				myStream->Close();
-			}
-		}
+		//SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
+		//saveFileDialog1->Filter = "Imagem (*.jpg)|*.jpg";
+		////saveFileDialog1->FilterIndex = 2;
+		//
+		//if (saveFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+		//	if ((myStream = saveFileDialog1->OpenFile()) != nullptr) {
+		//		myStream->Close();
+		//	}
+		//}
 	}
 };
 }
