@@ -187,24 +187,22 @@ namespace SegmentationSoft {
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void btn_adicionar_Click(System::Object^ sender, System::EventArgs^ e) {
-		Stream^ myStream;
-		// openFileDialog1->ShowDialog();
 
-		//SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
-		//saveFileDialog1->Filter = "Imagem (*.jpg)|*.jpg";
-		////saveFileDialog1->FilterIndex = 2;
-		//
 		if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 			//if ((myStream = openFileDialog1->OpenFile()) != nullptr) {
 				//myStream->Close();
 			//}
-			String^ nomes = "";
+			String^ nomeArquivo = "";
+			String^ extensao = "";
+			Directory::CreateDirectory("./teste");
 			for each (String^ file in openFileDialog1->FileNames)
 			{
-				nomes += Path::GetFileName(file) + Environment::NewLine;
+				nomeArquivo = Path::GetFileName(file);
+				extensao = Path::GetExtension(file);
+				File::Copy(file, "./teste/" + nomeArquivo);
 			}
-			//Directory d = gcnew Directory();
-			MessageBox::Show("Peguei uma lista de arquivos:\n" + nomes);
+			MessageBox::Show("Peguei uma lista de arquivos:\n" + nomeArquivo);
+
 		}
 		else {
 			MessageBox::Show("Não selecionei arquivos!");
