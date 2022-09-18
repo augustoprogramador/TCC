@@ -48,6 +48,10 @@ namespace SegmentationSoft {
 	private: System::Windows::Forms::ListBox^ lb_entrada;
 	private: System::Windows::Forms::ListBox^ lb_saida;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
+	private: System::Windows::Forms::Button^ btn_adicionar_saida;
+
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
 
 
 
@@ -56,9 +60,6 @@ namespace SegmentationSoft {
 	protected:
 
 	private:
-		/// <summary>
-		/// Variável de designer necessária.
-		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -76,7 +77,11 @@ namespace SegmentationSoft {
 			this->lb_entrada = (gcnew System::Windows::Forms::ListBox());
 			this->lb_saida = (gcnew System::Windows::Forms::ListBox());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->btn_adicionar_saida = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->tableLayoutPanel1->SuspendLayout();
+			this->tableLayoutPanel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -110,11 +115,12 @@ namespace SegmentationSoft {
 				50)));
 			this->tableLayoutPanel1->Controls->Add(this->btn_adicionar, 0, 0);
 			this->tableLayoutPanel1->Controls->Add(this->btn_remover, 1, 0);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(153, 317);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(51, 308);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(229, 53);
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 50)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(197, 50);
 			this->tableLayoutPanel1->TabIndex = 2;
 			// 
 			// btn_adicionar
@@ -124,7 +130,7 @@ namespace SegmentationSoft {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->btn_adicionar->Location = System::Drawing::Point(3, 3);
 			this->btn_adicionar->Name = L"btn_adicionar";
-			this->btn_adicionar->Size = System::Drawing::Size(108, 47);
+			this->btn_adicionar->Size = System::Drawing::Size(92, 44);
 			this->btn_adicionar->TabIndex = 0;
 			this->btn_adicionar->Text = L"Adicionar";
 			this->btn_adicionar->UseVisualStyleBackColor = true;
@@ -135,9 +141,9 @@ namespace SegmentationSoft {
 			this->btn_remover->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->btn_remover->Location = System::Drawing::Point(117, 3);
+			this->btn_remover->Location = System::Drawing::Point(101, 3);
 			this->btn_remover->Name = L"btn_remover";
-			this->btn_remover->Size = System::Drawing::Size(109, 47);
+			this->btn_remover->Size = System::Drawing::Size(93, 44);
 			this->btn_remover->TabIndex = 1;
 			this->btn_remover->Text = L"Remover";
 			this->btn_remover->UseVisualStyleBackColor = true;
@@ -162,12 +168,55 @@ namespace SegmentationSoft {
 			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
 			// 
+			// btn_adicionar_saida
+			// 
+			this->btn_adicionar_saida->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->btn_adicionar_saida->Location = System::Drawing::Point(3, 3);
+			this->btn_adicionar_saida->Name = L"btn_adicionar_saida";
+			this->btn_adicionar_saida->Size = System::Drawing::Size(92, 41);
+			this->btn_adicionar_saida->TabIndex = 0;
+			this->btn_adicionar_saida->Text = L"Adicionar";
+			this->btn_adicionar_saida->UseVisualStyleBackColor = true;
+			this->btn_adicionar_saida->Click += gcnew System::EventHandler(this, &MyForm1::btn_adicionar_saida_Click);
+			// 
+			// button2
+			// 
+			this->button2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->button2->Location = System::Drawing::Point(101, 3);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(93, 41);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"Remover";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// tableLayoutPanel2
+			// 
+			this->tableLayoutPanel2->ColumnCount = 2;
+			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				50)));
+			this->tableLayoutPanel2->Controls->Add(this->btn_adicionar_saida, 0, 0);
+			this->tableLayoutPanel2->Controls->Add(this->button2, 1, 0);
+			this->tableLayoutPanel2->Location = System::Drawing::Point(291, 308);
+			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
+			this->tableLayoutPanel2->RowCount = 1;
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
+			this->tableLayoutPanel2->Size = System::Drawing::Size(197, 47);
+			this->tableLayoutPanel2->TabIndex = 5;
+			// 
 			// MyForm1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->ClientSize = System::Drawing::Size(689, 465);
+			this->Controls->Add(this->tableLayoutPanel2);
 			this->Controls->Add(this->lb_saida);
 			this->Controls->Add(this->lb_entrada);
 			this->Controls->Add(this->tableLayoutPanel1);
@@ -178,6 +227,7 @@ namespace SegmentationSoft {
 			this->Text = L"MyForm1";
 			this->Load += gcnew System::EventHandler(this, &MyForm1::MyForm1_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
+			this->tableLayoutPanel2->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -185,27 +235,61 @@ namespace SegmentationSoft {
 #pragma endregion
 	
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
+
+		Directory::CreateDirectory("./imagens/entrada");
+		Directory::CreateDirectory("./imagens/saida");
+		DirectoryInfo^ entrada_dir = gcnew DirectoryInfo("./imagens/entrada");
+		DirectoryInfo^ saida_dir = gcnew DirectoryInfo("./imagens/saida");
+		for each (FileInfo ^ f in entrada_dir->GetFiles())
+		{
+			String^ nomeArquivo = Path::GetFileNameWithoutExtension(f->FullName);
+			nomeArquivo = nomeArquivo->ToUpper();
+			lb_entrada->Items->Add(nomeArquivo);
+		};
+		for each (FileInfo ^ f in saida_dir->GetFiles())
+		{
+			String^ nomeArquivo = Path::GetFileNameWithoutExtension(f->FullName);
+			nomeArquivo = nomeArquivo->ToUpper();
+			lb_saida->Items->Add(nomeArquivo);
+		};
 	}
 	private: System::Void btn_adicionar_Click(System::Object^ sender, System::EventArgs^ e) {
 
+		openFileDialog1->Multiselect = true;
+
 		if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
-			//if ((myStream = openFileDialog1->OpenFile()) != nullptr) {
-				//myStream->Close();
-			//}
+
 			String^ nomeArquivo = "";
 			String^ extensao = "";
-			Directory::CreateDirectory("./teste");
+			int cont = 1;
+			
 			for each (String^ file in openFileDialog1->FileNames)
 			{
 				nomeArquivo = Path::GetFileName(file);
 				extensao = Path::GetExtension(file);
-				File::Copy(file, "./teste/" + nomeArquivo);
+				File::Copy(file, "./imagens/entrada/" + "entrada" + (cont++) + extensao);
 			}
 			MessageBox::Show("Peguei uma lista de arquivos:\n" + nomeArquivo);
 
 		}
-		else {
-			MessageBox::Show("Não selecionei arquivos!");
+	}
+	private: System::Void btn_adicionar_saida_Click(System::Object^ sender, System::EventArgs^ e) {
+		openFileDialog1->Multiselect = true;
+
+		if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+
+			String^ nomeArquivo = "";
+			String^ extensao = "";
+			int cont = 1;
+			Directory::CreateDirectory("./imagens/saida");
+			for each (String ^ file in openFileDialog1->FileNames)
+			{
+				nomeArquivo = Path::GetFileName(file);
+				extensao = Path::GetExtension(file);
+				File::Copy(file, "./imagens/saida/" + "saida" + (cont++) + extensao);
+			}
+			MessageBox::Show("Peguei uma lista de arquivos:\n" + nomeArquivo);
+
 		}
 	}
 };
