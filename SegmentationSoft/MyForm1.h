@@ -42,20 +42,15 @@ namespace SegmentationSoft {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Button^ btn_adicionar;
-	private: System::Windows::Forms::Button^ btn_remover;
-
+	private: System::Windows::Forms::Button^ btn_remover_entrada;
 
 	private: System::Windows::Forms::ListBox^ lb_entrada;
 	private: System::Windows::Forms::ListBox^ lb_saida;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
 	private: System::Windows::Forms::Button^ btn_adicionar_saida;
+	private: System::Windows::Forms::Button^ btn_remover_saida;
 
-	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
-
-
-
-
 
 	protected:
 
@@ -73,12 +68,12 @@ namespace SegmentationSoft {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->btn_adicionar = (gcnew System::Windows::Forms::Button());
-			this->btn_remover = (gcnew System::Windows::Forms::Button());
+			this->btn_remover_entrada = (gcnew System::Windows::Forms::Button());
 			this->lb_entrada = (gcnew System::Windows::Forms::ListBox());
 			this->lb_saida = (gcnew System::Windows::Forms::ListBox());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->btn_adicionar_saida = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->btn_remover_saida = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
@@ -114,7 +109,7 @@ namespace SegmentationSoft {
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
 			this->tableLayoutPanel1->Controls->Add(this->btn_adicionar, 0, 0);
-			this->tableLayoutPanel1->Controls->Add(this->btn_remover, 1, 0);
+			this->tableLayoutPanel1->Controls->Add(this->btn_remover_entrada, 1, 0);
 			this->tableLayoutPanel1->Location = System::Drawing::Point(51, 308);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 1;
@@ -136,17 +131,18 @@ namespace SegmentationSoft {
 			this->btn_adicionar->UseVisualStyleBackColor = true;
 			this->btn_adicionar->Click += gcnew System::EventHandler(this, &MyForm1::btn_adicionar_Click);
 			// 
-			// btn_remover
+			// btn_remover_entrada
 			// 
-			this->btn_remover->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->btn_remover_entrada->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->btn_remover->Location = System::Drawing::Point(101, 3);
-			this->btn_remover->Name = L"btn_remover";
-			this->btn_remover->Size = System::Drawing::Size(93, 44);
-			this->btn_remover->TabIndex = 1;
-			this->btn_remover->Text = L"Remover";
-			this->btn_remover->UseVisualStyleBackColor = true;
+			this->btn_remover_entrada->Location = System::Drawing::Point(101, 3);
+			this->btn_remover_entrada->Name = L"btn_remover_entrada";
+			this->btn_remover_entrada->Size = System::Drawing::Size(93, 44);
+			this->btn_remover_entrada->TabIndex = 1;
+			this->btn_remover_entrada->Text = L"Remover";
+			this->btn_remover_entrada->UseVisualStyleBackColor = true;
+			this->btn_remover_entrada->Click += gcnew System::EventHandler(this, &MyForm1::btn_remover_entrada_Click);
 			// 
 			// lb_entrada
 			// 
@@ -181,17 +177,18 @@ namespace SegmentationSoft {
 			this->btn_adicionar_saida->UseVisualStyleBackColor = true;
 			this->btn_adicionar_saida->Click += gcnew System::EventHandler(this, &MyForm1::btn_adicionar_saida_Click);
 			// 
-			// button2
+			// btn_remover_saida
 			// 
-			this->button2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+			this->btn_remover_saida->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
-			this->button2->Location = System::Drawing::Point(101, 3);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(93, 41);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"Remover";
-			this->button2->UseVisualStyleBackColor = true;
+			this->btn_remover_saida->Location = System::Drawing::Point(101, 3);
+			this->btn_remover_saida->Name = L"btn_remover_saida";
+			this->btn_remover_saida->Size = System::Drawing::Size(93, 41);
+			this->btn_remover_saida->TabIndex = 1;
+			this->btn_remover_saida->Text = L"Remover";
+			this->btn_remover_saida->UseVisualStyleBackColor = true;
+			this->btn_remover_saida->Click += gcnew System::EventHandler(this, &MyForm1::btn_remover_saida_Click);
 			// 
 			// tableLayoutPanel2
 			// 
@@ -201,7 +198,7 @@ namespace SegmentationSoft {
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
 			this->tableLayoutPanel2->Controls->Add(this->btn_adicionar_saida, 0, 0);
-			this->tableLayoutPanel2->Controls->Add(this->button2, 1, 0);
+			this->tableLayoutPanel2->Controls->Add(this->btn_remover_saida, 1, 0);
 			this->tableLayoutPanel2->Location = System::Drawing::Point(291, 308);
 			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
 			this->tableLayoutPanel2->RowCount = 1;
@@ -238,20 +235,8 @@ namespace SegmentationSoft {
 
 		Directory::CreateDirectory("./imagens/entrada");
 		Directory::CreateDirectory("./imagens/saida");
-		DirectoryInfo^ entrada_dir = gcnew DirectoryInfo("./imagens/entrada");
-		DirectoryInfo^ saida_dir = gcnew DirectoryInfo("./imagens/saida");
-		for each (FileInfo ^ f in entrada_dir->GetFiles())
-		{
-			String^ nomeArquivo = Path::GetFileNameWithoutExtension(f->FullName);
-			nomeArquivo = nomeArquivo->ToUpper();
-			lb_entrada->Items->Add(nomeArquivo);
-		};
-		for each (FileInfo ^ f in saida_dir->GetFiles())
-		{
-			String^ nomeArquivo = Path::GetFileNameWithoutExtension(f->FullName);
-			nomeArquivo = nomeArquivo->ToUpper();
-			lb_saida->Items->Add(nomeArquivo);
-		};
+		this->atualizarListaImagens();
+		lb_entrada->SelectionMode = SelectionMode::MultiExtended;
 	}
 	private: System::Void btn_adicionar_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -269,7 +254,7 @@ namespace SegmentationSoft {
 				extensao = Path::GetExtension(file);
 				File::Copy(file, "./imagens/entrada/" + "entrada" + (cont++) + extensao);
 			}
-			MessageBox::Show("Peguei uma lista de arquivos:\n" + nomeArquivo);
+			this->atualizarListaImagens();
 
 		}
 	}
@@ -288,9 +273,55 @@ namespace SegmentationSoft {
 				extensao = Path::GetExtension(file);
 				File::Copy(file, "./imagens/saida/" + "saida" + (cont++) + extensao);
 			}
-			MessageBox::Show("Peguei uma lista de arquivos:\n" + nomeArquivo);
+			this->atualizarListaImagens();
 
 		}
+	}
+
+	private: System::Void btn_remover_entrada_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (lb_entrada->SelectedItem) {
+			String^ nome_entrada = lb_entrada->Text;
+			/*DirectoryInfo::
+			File::Delete("./imagens/entrada/" + );
+			MessageBox::Show("Vamos deletar essa entrada " + teste);*/
+		}
+		this->atualizarListaImagens();
+	}
+	private: System::Void btn_remover_saida_Click(System::Object^ sender, System::EventArgs^ e) {
+		
+		MessageBox::Show("Vamos deletar essa saída");
+		this->atualizarListaImagens();
+	}
+
+	private: System::Void deletarImagens(array<String^ >^ teste) {
+		lb_saida->Items->Clear();
+		for each (String^ f in teste)
+		{
+			MessageBox::Show(f);
+			/*String^ nomeArquivo = Path::GetFileNameWithoutExtension(f->FullName);
+			nomeArquivo = nomeArquivo->ToUpper();
+			lb_entrada->Items->Add(nomeArquivo);*/
+		};
+	}
+
+	private: System::Void atualizarListaImagens () {
+		DirectoryInfo^ entrada_dir = gcnew DirectoryInfo("./imagens/entrada");
+		DirectoryInfo^ saida_dir = gcnew DirectoryInfo("./imagens/saida");
+
+		lb_entrada->Items->Clear();
+		lb_saida->Items->Clear();
+		for each (FileInfo ^ f in entrada_dir->GetFiles())
+		{
+			String^ nomeArquivo = Path::GetFileNameWithoutExtension(f->FullName);
+			nomeArquivo = nomeArquivo->ToUpper();
+			lb_entrada->Items->Add(nomeArquivo);
+		};
+		for each (FileInfo ^ f in saida_dir->GetFiles())
+		{
+			String^ nomeArquivo = Path::GetFileNameWithoutExtension(f->FullName);
+			nomeArquivo = nomeArquivo->ToUpper();
+			lb_saida->Items->Add(nomeArquivo);
+		};
 	}
 };
 }
