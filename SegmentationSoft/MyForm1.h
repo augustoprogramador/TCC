@@ -1,6 +1,6 @@
 #pragma once
-
-//using namespace System::IO;
+#include <iostream>
+#include<filesystem>
 
 namespace SegmentationSoft {
 
@@ -55,6 +55,7 @@ namespace SegmentationSoft {
 	protected:
 
 	private:
+		array<String^ >^ ext_aceitas;
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -62,6 +63,7 @@ namespace SegmentationSoft {
 		/// Método necessário para suporte ao Designer - não modifique 
 		/// o conteúdo deste método com o editor de código.
 		/// </summary>
+/// 
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -235,12 +237,17 @@ namespace SegmentationSoft {
 
 		Directory::CreateDirectory("./imagens/entrada");
 		Directory::CreateDirectory("./imagens/saida");
+		
 		this->atualizarListaImagens();
 		lb_entrada->SelectionMode = SelectionMode::MultiExtended;
+		ext_aceitas = gcnew array<String^ >(2);
+		ext_aceitas[0] = ".jpeg";
+		ext_aceitas[1] = ".png";
 	}
 	private: System::Void btn_adicionar_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		openFileDialog1->Multiselect = true;
+		openFileDialog1->Filter = "Imagens (*.jpeg)|*.JPEG;";
 
 		if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 
@@ -252,7 +259,7 @@ namespace SegmentationSoft {
 			{
 				nomeArquivo = Path::GetFileName(file);
 				extensao = Path::GetExtension(file);
-				File::Copy(file, "./imagens/entrada/" + "entrada" + (cont++) + extensao);
+				File::Copy(file, "./imagens/entrada/" + "in_" + (cont++) + extensao);
 			}
 			this->atualizarListaImagens();
 
@@ -267,6 +274,7 @@ namespace SegmentationSoft {
 			String^ extensao = "";
 			int cont = 1;
 			Directory::CreateDirectory("./imagens/saida");
+			
 			for each (String ^ file in openFileDialog1->FileNames)
 			{
 				nomeArquivo = Path::GetFileName(file);
@@ -279,11 +287,24 @@ namespace SegmentationSoft {
 	}
 
 	private: System::Void btn_remover_entrada_Click(System::Object^ sender, System::EventArgs^ e) {
+		
 		if (lb_entrada->SelectedItem) {
-			String^ nome_entrada = lb_entrada->Text;
-			/*DirectoryInfo::
-			File::Delete("./imagens/entrada/" + );
-			MessageBox::Show("Vamos deletar essa entrada " + teste);*/
+			ListBox::SelectedObjectCollection^ nome_entrada = lb_entrada->SelectedItems;
+			String^ dir_entrada = Directory::GetCurrentDirectory() + "/imagens/entrada/";
+			for each (String^ arquivo in nome_entrada)
+			{
+				// Iterar os arquivos do diretório
+				
+				// Comparar com os nomes selecionados
+				//array<String^ >^ ext_aceitas = { ".jpeg", ".png" };
+				for each (String^ ext in ext_aceitas)
+				{
+					if (File::Exists(dir_entrada + arquivo + ext)) {
+						MessageBox::Show("Vamos deletar essa entrada \n" + dir_entrada + arquivo + ext);
+						File::Delete(dir_entrada + arquivo + ext);
+					}
+				}
+			}
 		}
 		this->atualizarListaImagens();
 	}
@@ -295,6 +316,8 @@ namespace SegmentationSoft {
 
 	private: System::Void deletarImagens(array<String^ >^ teste) {
 		lb_saida->Items->Clear();
+		String^ dir_entrada = Directory::GetCurrentDirectory() + "/entrada";
+
 		for each (String^ f in teste)
 		{
 			MessageBox::Show(f);
