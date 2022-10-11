@@ -56,6 +56,7 @@ namespace SegmentationSoft {
 
 	private:
 		array<String^ >^ ext_aceitas;
+		String^ strFiltroExtAceitas = "";
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
@@ -234,20 +235,20 @@ namespace SegmentationSoft {
 #pragma endregion
 	
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
-
 		Directory::CreateDirectory("./imagens/entrada");
 		Directory::CreateDirectory("./imagens/saida");
 		
 		this->atualizarListaImagens();
 		lb_entrada->SelectionMode = SelectionMode::MultiExtended;
-		ext_aceitas = gcnew array<String^ >(2);
-		ext_aceitas[0] = ".jpeg";
-		ext_aceitas[1] = ".png";
+		ext_aceitas = gcnew array<String^ >{".jpg", ".jpeg", ".png"};
+		criaStringFiltro();
+		/*ext_aceitas[0] = ".jpeg";
+		ext_aceitas[1] = ".png";*/
 	}
 	private: System::Void btn_adicionar_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		openFileDialog1->Multiselect = true;
-		openFileDialog1->Filter = "Imagens (*.jpeg)|*.JPEG;";
+		openFileDialog1->Filter = "Imagens (*.jpeg)|*.JPG;*.JPEG;*.PNG";
 
 		if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 
@@ -314,19 +315,6 @@ namespace SegmentationSoft {
 		this->atualizarListaImagens();
 	}
 
-	private: System::Void deletarImagens(array<String^ >^ teste) {
-		lb_saida->Items->Clear();
-		String^ dir_entrada = Directory::GetCurrentDirectory() + "/entrada";
-
-		for each (String^ f in teste)
-		{
-			MessageBox::Show(f);
-			/*String^ nomeArquivo = Path::GetFileNameWithoutExtension(f->FullName);
-			nomeArquivo = nomeArquivo->ToUpper();
-			lb_entrada->Items->Add(nomeArquivo);*/
-		};
-	}
-
 	private: System::Void atualizarListaImagens () {
 		DirectoryInfo^ entrada_dir = gcnew DirectoryInfo("./imagens/entrada");
 		DirectoryInfo^ saida_dir = gcnew DirectoryInfo("./imagens/saida");
@@ -345,6 +333,15 @@ namespace SegmentationSoft {
 			nomeArquivo = nomeArquivo->ToUpper();
 			lb_saida->Items->Add(nomeArquivo);
 		};
+	}
+	
+	private: System::Void criaStringFiltro() {
+		for each (String^ ext in ext_aceitas)
+		{
+			/*"Imagens (*.jpeg)|*.JPEG;"*/
+			strFiltroExtAceitas += "*" + ext + ";";
+
+		}
 	}
 };
 }
