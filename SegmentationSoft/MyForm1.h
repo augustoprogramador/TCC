@@ -336,12 +336,13 @@ namespace SegmentationSoft {
 	}
 	
 	private: System::Void criaStringFiltro() {
+		strFiltroExtAceitas += "(";
 		for each (String^ ext in ext_aceitas)
 		{
-			/*"Imagens (*.jpeg)|*.JPEG;"*/
 			strFiltroExtAceitas += "*" + ext + ";";
-
 		}
+		strFiltroExtAceitas = strFiltroExtAceitas->Substring(0, strFiltroExtAceitas->Length - 1);
+		strFiltroExtAceitas += ")";
 	}
 };
 }
