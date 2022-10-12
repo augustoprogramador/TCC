@@ -248,7 +248,7 @@ namespace SegmentationSoft {
 	private: System::Void btn_adicionar_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		openFileDialog1->Multiselect = true;
-		openFileDialog1->Filter = "Imagens (*.jpeg)|*.JPG;*.JPEG;*.PNG";
+		openFileDialog1->Filter = "Imagens " + strFiltroExtAceitas;
 
 		if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 
@@ -294,10 +294,6 @@ namespace SegmentationSoft {
 			String^ dir_entrada = Directory::GetCurrentDirectory() + "/imagens/entrada/";
 			for each (String^ arquivo in nome_entrada)
 			{
-				// Iterar os arquivos do diretório
-				
-				// Comparar com os nomes selecionados
-				//array<String^ >^ ext_aceitas = { ".jpeg", ".png" };
 				for each (String^ ext in ext_aceitas)
 				{
 					if (File::Exists(dir_entrada + arquivo + ext)) {
@@ -342,7 +338,12 @@ namespace SegmentationSoft {
 			strFiltroExtAceitas += "*" + ext + ";";
 		}
 		strFiltroExtAceitas = strFiltroExtAceitas->Substring(0, strFiltroExtAceitas->Length - 1);
-		strFiltroExtAceitas += ")";
+		strFiltroExtAceitas += ")|";
+		for each (String ^ ext in ext_aceitas)
+		{
+			strFiltroExtAceitas += "*" + ext->ToUpper() + ";";
+		}
+		strFiltroExtAceitas = strFiltroExtAceitas->Substring(0, strFiltroExtAceitas->Length - 1);
 	}
 };
 }
