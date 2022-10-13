@@ -1,5 +1,6 @@
 #pragma once
 #include "MyForm1.h"
+#include "MyForm2.h"
 
 namespace SegmentationSoft {
 
@@ -183,16 +184,17 @@ namespace SegmentationSoft {
 		#pragma endregion
 		private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		}
-		private: System::Void lbl_algoritmos_Click(System::Object^ sender, System::EventArgs^ e) {
-			/*MyForm1^ form = gcnew MyForm1();
+		private: System::Void lbl_imagem_Click(System::Object^ sender, System::EventArgs^ e) {
+			MyForm1^ form = gcnew MyForm1();
 			menu_ativo->Controls->Clear();
 			form->TopLevel = false;
 			menu_ativo->Controls->Add(form);
 			form->Height = sc_tela_principal->Panel2->Height;
-			form->Show();*/
+			form->Show();
 		}
-		private: System::Void lbl_imagem_Click(System::Object^ sender, System::EventArgs^ e) {
-			MyForm1^ form = gcnew MyForm1();
+
+		private: System::Void lbl_algoritmos_Click(System::Object^ sender, System::EventArgs^ e) {
+			MyForm2^ form = gcnew MyForm2();
 			menu_ativo->Controls->Clear();
 			form->TopLevel = false;
 			menu_ativo->Controls->Add(form);
