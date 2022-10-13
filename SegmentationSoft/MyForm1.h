@@ -242,8 +242,6 @@ namespace SegmentationSoft {
 		lb_entrada->SelectionMode = SelectionMode::MultiExtended;
 		ext_aceitas = gcnew array<String^ >{".jpg", ".jpeg", ".png"};
 		criaStringFiltro();
-		/*ext_aceitas[0] = ".jpeg";
-		ext_aceitas[1] = ".png";*/
 	}
 	private: System::Void btn_adicionar_Click(System::Object^ sender, System::EventArgs^ e) {
 
