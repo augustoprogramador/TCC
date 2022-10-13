@@ -295,7 +295,7 @@ namespace SegmentationSoft {
 				for each (String^ ext in ext_aceitas)
 				{
 					if (File::Exists(dir_entrada + arquivo + ext)) {
-						MessageBox::Show("Vamos deletar essa entrada \n" + dir_entrada + arquivo + ext);
+						//MessageBox::Show("Vamos deletar essa entrada \n" + dir_entrada + arquivo + ext);
 						File::Delete(dir_entrada + arquivo + ext);
 					}
 				}

@@ -176,6 +176,21 @@ namespace SegmentationSoft {
 		}
 	}
 	private: System::Void btn_remover_algo_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (lb_algoritmos->SelectedItem) {
+			ListBox::SelectedObjectCollection^ nome_entrada = lb_algoritmos->SelectedItems;
+			String^ dir_entrada = Directory::GetCurrentDirectory() + "/algoritmos/";
+			for each (String ^ arquivo in nome_entrada)
+			{
+				for each (String ^ ext in ext_aceitas)
+				{
+					if (File::Exists(dir_entrada + arquivo + ext)) {
+						//MessageBox::Show("Vamos deletar essa entrada \n" + dir_entrada + arquivo + ext);
+						File::Delete(dir_entrada + arquivo + ext);
+					}
+				}
+			}
+		}
+		this->atualizarListaAlgoritmos();
 	}
 
 	private: System::Void atualizarListaAlgoritmos() {
