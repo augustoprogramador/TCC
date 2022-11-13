@@ -265,7 +265,15 @@ namespace SegmentationSoft {
 		}
 	}
 	private: System::Void btn_adicionar_saida_Click(System::Object^ sender, System::EventArgs^ e) {
-		openFileDialog1->Multiselect = true;
+
+		// Abri Configs
+
+		// Floofill
+		// Campos
+
+//		float scrparam_qualquer;
+
+		/*openFileDialog1->Multiselect = true;
 
 		if (openFileDialog1->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
 
@@ -282,7 +290,7 @@ namespace SegmentationSoft {
 			}
 			this->atualizarListaImagens();
 
-		}
+		}*/
 	}
 
 	private: System::Void btn_remover_entrada_Click(System::Object^ sender, System::EventArgs^ e) {

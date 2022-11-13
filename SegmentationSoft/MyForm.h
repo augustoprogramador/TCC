@@ -1,6 +1,7 @@
 #pragma once
 #include "MyForm1.h"
 #include "MyForm2.h"
+#include "Frm_Configuracoes.h"
 
 namespace SegmentationSoft {
 
@@ -46,6 +47,7 @@ namespace SegmentationSoft {
 
 		private: System::Windows::Forms::Label^ lbl_execucao;
 	private: System::Windows::Forms::Panel^ menu_ativo;
+	private: System::Windows::Forms::Label^ label1;
 
 
 
@@ -63,6 +65,7 @@ namespace SegmentationSoft {
 		void InitializeComponent(void)
 		{
 			this->sc_tela_principal = (gcnew System::Windows::Forms::SplitContainer());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->lbl_configs = (gcnew System::Windows::Forms::Label());
 			this->lbl_imagem = (gcnew System::Windows::Forms::Label());
 			this->lbl_execucao = (gcnew System::Windows::Forms::Label());
@@ -82,6 +85,7 @@ namespace SegmentationSoft {
 			// 
 			// sc_tela_principal.Panel1
 			// 
+			this->sc_tela_principal->Panel1->Controls->Add(this->label1);
 			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_configs);
 			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_imagem);
 			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_execucao);
@@ -93,6 +97,22 @@ namespace SegmentationSoft {
 			this->sc_tela_principal->Size = System::Drawing::Size(997, 655);
 			this->sc_tela_principal->SplitterDistance = 316;
 			this->sc_tela_principal->TabIndex = 0;
+			// 
+			// label1
+			// 
+			this->label1->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::SystemColors::Control;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(77, 243);
+			this->label1->Margin = System::Windows::Forms::Padding(0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(119, 24);
+			this->label1->TabIndex = 5;
+			this->label1->Text = L"Resultado";
+			this->label1->Visible = false;
 			// 
 			// lbl_configs
 			// 
@@ -108,6 +128,7 @@ namespace SegmentationSoft {
 			this->lbl_configs->Size = System::Drawing::Size(99, 24);
 			this->lbl_configs->TabIndex = 4;
 			this->lbl_configs->Text = L"Configs.";
+			this->lbl_configs->Click += gcnew System::EventHandler(this, &MyForm::lbl_configs_Click);
 			// 
 			// lbl_imagem
 			// 
@@ -195,6 +216,14 @@ namespace SegmentationSoft {
 
 		private: System::Void lbl_algoritmos_Click(System::Object^ sender, System::EventArgs^ e) {
 			MyForm2^ form = gcnew MyForm2();
+			menu_ativo->Controls->Clear();
+			form->TopLevel = false;
+			menu_ativo->Controls->Add(form);
+			form->Height = sc_tela_principal->Panel2->Height;
+			form->Show();
+		}
+		private: System::Void lbl_configs_Click(System::Object^ sender, System::EventArgs^ e) {
+			Frm_Configuracoes^ form = gcnew Frm_Configuracoes();
 			menu_ativo->Controls->Clear();
 			form->TopLevel = false;
 			menu_ativo->Controls->Add(form);
