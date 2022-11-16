@@ -125,7 +125,7 @@
     <ClCompile Include="MyForm1.cpp" />
     <ClCompile Include="MyForm2.cpp" />
     <ClCompile Include="MyForm3.cpp" />
-    <ClCompile Include="MyForm4.cpp" />
+    <ClCompile Include="Frm_Configuracoes.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">

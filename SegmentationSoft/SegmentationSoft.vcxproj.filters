@@ -27,7 +27,7 @@
     <ClCompile Include="MyForm3.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="MyForm4.cpp">
+    <ClCompile Include="Frm_Configuracoes.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>

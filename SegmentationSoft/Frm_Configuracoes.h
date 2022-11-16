@@ -38,10 +38,13 @@ namespace SegmentationSoft {
 	protected:
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ btn_compilar;
+	private: System::Windows::Forms::GroupBox^ gpb_celula;
 
 
-	private: System::Windows::Forms::GroupBox^ groupBox1;
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+
+	private: System::Windows::Forms::TableLayoutPanel^ tlp_campos;
+
+
 
 	private:
 		/// <summary>
@@ -59,10 +62,10 @@ namespace SegmentationSoft {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btn_compilar = (gcnew System::Windows::Forms::Button());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->groupBox1->SuspendLayout();
-			this->tableLayoutPanel1->SuspendLayout();
+			this->gpb_celula = (gcnew System::Windows::Forms::GroupBox());
+			this->tlp_campos = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->gpb_celula->SuspendLayout();
+			this->tlp_campos->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// textBox1
@@ -72,7 +75,7 @@ namespace SegmentationSoft {
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->textBox1->Location = System::Drawing::Point(37, 45);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(88, 20);
+			this->textBox1->Size = System::Drawing::Size(108, 20);
 			this->textBox1->TabIndex = 0;
 			// 
 			// label1
@@ -89,7 +92,7 @@ namespace SegmentationSoft {
 			// 
 			// btn_compilar
 			// 
-			this->btn_compilar->Location = System::Drawing::Point(168, 331);
+			this->btn_compilar->Location = System::Drawing::Point(157, 289);
 			this->btn_compilar->Name = L"btn_compilar";
 			this->btn_compilar->Size = System::Drawing::Size(75, 23);
 			this->btn_compilar->TabIndex = 2;
@@ -97,53 +100,65 @@ namespace SegmentationSoft {
 			this->btn_compilar->UseVisualStyleBackColor = true;
 			this->btn_compilar->Click += gcnew System::EventHandler(this, &Frm_Configuracoes::btn_compilar_Click);
 			// 
-			// groupBox1
+			// gpb_celula
 			// 
-			this->groupBox1->Controls->Add(this->textBox1);
-			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(3, 3);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(160, 94);
-			this->groupBox1->TabIndex = 5;
-			this->groupBox1->TabStop = false;
+			this->gpb_celula->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->gpb_celula->Controls->Add(this->textBox1);
+			this->gpb_celula->Controls->Add(this->label1);
+			this->gpb_celula->Location = System::Drawing::Point(3, 3);
+			this->gpb_celula->Name = L"gpb_celula";
+			this->gpb_celula->Size = System::Drawing::Size(180, 94);
+			this->gpb_celula->TabIndex = 5;
+			this->gpb_celula->TabStop = false;
 			// 
-			// tableLayoutPanel1
+			// tlp_campos
 			// 
-			this->tableLayoutPanel1->ColumnCount = 2;
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel1->Controls->Add(this->groupBox1, 0, 0);
-			this->tableLayoutPanel1->Location = System::Drawing::Point(70, 65);
-			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
-			this->tableLayoutPanel1->RowCount = 1;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel1->Size = System::Drawing::Size(372, 100);
-			this->tableLayoutPanel1->TabIndex = 6;
+			this->tlp_campos->ColumnCount = 2;
+			this->tlp_campos->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tlp_campos->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
+			this->tlp_campos->Controls->Add(this->gpb_celula, 0, 0);
+			this->tlp_campos->Location = System::Drawing::Point(70, 65);
+			this->tlp_campos->Name = L"tlp_campos";
+			this->tlp_campos->RowCount = 1;
+			this->tlp_campos->AutoSize = 1;
+			this->tlp_campos->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::AutoSize)));
+			this->tlp_campos->Size = System::Drawing::Size(372, 100);
+			this->tlp_campos->TabIndex = 6;
 			// 
 			// Frm_Configuracoes
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(939, 550);
-			this->Controls->Add(this->tableLayoutPanel1);
+			this->Controls->Add(this->tlp_campos);
 			this->Controls->Add(this->btn_compilar);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Frm_Configuracoes";
 			this->Text = L"Configurações";
 			this->Load += gcnew System::EventHandler(this, &Frm_Configuracoes::Frm_Configuracoes_Load);
-			this->groupBox1->ResumeLayout(false);
-			this->groupBox1->PerformLayout();
-			this->tableLayoutPanel1->ResumeLayout(false);
+			this->gpb_celula->ResumeLayout(false);
+			this->gpb_celula->PerformLayout();
+			this->tlp_campos->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
+
 #pragma endregion
 	private: System::Void Frm_Configuracoes_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void btn_compilar_Click(System::Object^ sender, System::EventArgs^ e) {
 
+	private: System::Void btn_compilar_Click(System::Object^ sender, System::EventArgs^ e) {
+		/*gpb_celula->Controls;
+		tlp_campos->Controls;*/
+		clonaComponente();
+	}
+
+	private: System::Void clonaComponente() {
+		//tlp_campos->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::AutoSize)));
+		tlp_campos->Controls->Add(gcnew Button, -1, -1);
+		MessageBox::Show(tlp_campos->RowCount.ToString());
 	}
 };
 }
