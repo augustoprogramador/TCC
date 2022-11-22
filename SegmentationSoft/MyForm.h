@@ -52,9 +52,7 @@ namespace SegmentationSoft {
 
 
 		private:
-		/// <summary>
-		/// Variável de designer necessária.
-		/// </summary>
+			Frm_Configuracoes^ form = nullptr;
 		System::ComponentModel::Container ^components;
 
 		#pragma region Windows Form Designer generated code
@@ -223,7 +221,9 @@ namespace SegmentationSoft {
 			form->Show();
 		}
 		private: System::Void lbl_configs_Click(System::Object^ sender, System::EventArgs^ e) {
-			Frm_Configuracoes^ form = gcnew Frm_Configuracoes();
+			if (form == nullptr) {
+				form = gcnew Frm_Configuracoes();
+			}
 			menu_ativo->Controls->Clear();
 			form->TopLevel = false;
 			menu_ativo->Controls->Add(form);
