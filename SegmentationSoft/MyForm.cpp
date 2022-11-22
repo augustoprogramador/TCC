@@ -1,4 +1,4 @@
-#include "MyForm.h"
+#include "Frm_Principal.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -8,6 +8,6 @@ using namespace System::Windows::Forms;
 void main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	SegmentationSoft::MyForm form;
+	SegmentationSoft::Frm_Principal form;
 	Application::Run(% form);
 }

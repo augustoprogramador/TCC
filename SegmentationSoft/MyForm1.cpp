@@ -1,2 +1,2 @@
-#include "MyForm1.h"
+#include "Frm_Imagem.h"
 

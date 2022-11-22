@@ -1,2 +1,2 @@
-#include "MyForm2.h"
+#include "Frm_Algoritmos.h"
 

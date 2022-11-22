@@ -13,12 +13,12 @@ namespace SegmentationSoft {
 	using namespace System::IO;
 
 	/// <summary>
-	/// Sumário para MyForm2
+	/// Sumário para Frm_Algoritmos
 	/// </summary>
-	public ref class MyForm2 : public System::Windows::Forms::Form
+	public ref class Frm_Algoritmos : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm2(void)
+		Frm_Algoritmos(void)
 		{
 			InitializeComponent();
 			//
@@ -30,7 +30,7 @@ namespace SegmentationSoft {
 		/// <summary>
 		/// Limpar os recursos que estão sendo usados.
 		/// </summary>
-		~MyForm2()
+		~Frm_Algoritmos()
 		{
 			if (components)
 			{
@@ -69,10 +69,7 @@ namespace SegmentationSoft {
 			this->tableLayoutPanel1->SuspendLayout();
 			this->tableLayoutPanel2->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// lb_algoritmos
-			// 
-			this->lb_algoritmos->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lb_algoritmos->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 15.75, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lb_algoritmos->FormattingEnabled = true;
 			this->lb_algoritmos->ItemHeight = 30;
@@ -81,9 +78,6 @@ namespace SegmentationSoft {
 			this->lb_algoritmos->Name = L"lb_algoritmos";
 			this->lb_algoritmos->Size = System::Drawing::Size(259, 244);
 			this->lb_algoritmos->TabIndex = 0;
-			// 
-			// tableLayoutPanel1
-			// 
 			this->tableLayoutPanel1->ColumnCount = 1;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
@@ -92,13 +86,10 @@ namespace SegmentationSoft {
 			this->tableLayoutPanel1->Location = System::Drawing::Point(64, 49);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 2;
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 82.56881F)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 17.43119F)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 82.56881)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 17.43119)));
 			this->tableLayoutPanel1->Size = System::Drawing::Size(265, 327);
 			this->tableLayoutPanel1->TabIndex = 1;
-			// 
-			// tableLayoutPanel2
-			// 
 			this->tableLayoutPanel2->ColumnCount = 2;
 			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
@@ -112,9 +103,6 @@ namespace SegmentationSoft {
 			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tableLayoutPanel2->Size = System::Drawing::Size(259, 51);
 			this->tableLayoutPanel2->TabIndex = 2;
-			// 
-			// btn_adicionar_algo
-			// 
 			this->btn_adicionar_algo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -124,10 +112,7 @@ namespace SegmentationSoft {
 			this->btn_adicionar_algo->TabIndex = 2;
 			this->btn_adicionar_algo->Text = L"Adicionar";
 			this->btn_adicionar_algo->UseVisualStyleBackColor = true;
-			this->btn_adicionar_algo->Click += gcnew System::EventHandler(this, &MyForm2::btn_adicionar_algo_Click);
-			// 
-			// btn_remover_algo
-			// 
+			this->btn_adicionar_algo->Click += gcnew System::EventHandler(this, &Frm_Algoritmos::btn_adicionar_algo_Click);
 			this->btn_remover_algo->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
@@ -137,18 +122,15 @@ namespace SegmentationSoft {
 			this->btn_remover_algo->TabIndex = 3;
 			this->btn_remover_algo->Text = L"Remover";
 			this->btn_remover_algo->UseVisualStyleBackColor = true;
-			this->btn_remover_algo->Click += gcnew System::EventHandler(this, &MyForm2::btn_remover_algo_Click);
-			// 
-			// MyForm2
-			// 
+			this->btn_remover_algo->Click += gcnew System::EventHandler(this, &Frm_Algoritmos::btn_remover_algo_Click);
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(414, 448);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"MyForm2";
-			this->Text = L"MyForm2";
-			this->Load += gcnew System::EventHandler(this, &MyForm2::MyForm2_Load);
+			this->Name = L"Frm_Algoritmos";
+			this->Text = L"Frm_Algoritmos";
+			this->Load += gcnew System::EventHandler(this, &Frm_Algoritmos::Frm_Algoritmos_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			this->ResumeLayout(false);
@@ -220,7 +202,7 @@ namespace SegmentationSoft {
 		strFiltroExtAceitas = strFiltroExtAceitas->Substring(0, strFiltroExtAceitas->Length - 1);
 	}
 
-	private: System::Void MyForm2_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void Frm_Algoritmos_Load(System::Object^ sender, System::EventArgs^ e) {
 		Directory::CreateDirectory("./algoritmos");
 
 		this->atualizarListaAlgoritmos();

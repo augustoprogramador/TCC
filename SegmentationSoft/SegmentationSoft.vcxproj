@@ -128,16 +128,16 @@
     <ClCompile Include="Frm_Configuracoes.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="Frm_Principal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MyForm1.h">
+    <ClInclude Include="Frm_Imagem.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MyForm2.h">
+    <ClInclude Include="Frm_Algoritmos.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="MyForm3.h">
+    <ClInclude Include="Frm_Execucao.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Frm_Configuracoes.h">
@@ -145,17 +145,17 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
+    <EmbeddedResource Include="Frm_Principal.resx">
+      <DependentUpon>Frm_Principal.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm1.resx">
-      <DependentUpon>MyForm1.h</DependentUpon>
+    <EmbeddedResource Include="Frm_Imagem.resx">
+      <DependentUpon>Frm_Imagem.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm2.resx">
-      <DependentUpon>MyForm2.h</DependentUpon>
+    <EmbeddedResource Include="Frm_Algoritmos.resx">
+      <DependentUpon>Frm_Algoritmos.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyForm3.resx">
-      <DependentUpon>MyForm3.h</DependentUpon>
+    <EmbeddedResource Include="Frm_Execucao.resx">
+      <DependentUpon>Frm_Execucao.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Configuracoes.resx">
       <DependentUpon>Frm_Configuracoes.h</DependentUpon>
