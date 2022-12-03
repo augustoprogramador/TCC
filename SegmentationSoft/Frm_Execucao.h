@@ -59,28 +59,41 @@ namespace SegmentationSoft {
 			this->checkedListBox1 = (gcnew System::Windows::Forms::CheckedListBox());
 			this->checkedListBox2 = (gcnew System::Windows::Forms::CheckedListBox());
 			this->SuspendLayout();
+			// 
+			// button1
+			// 
 			this->button1->Location = System::Drawing::Point(321, 329);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(136, 45);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Executar";
 			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// checkedListBox1
+			// 
 			this->checkedListBox1->FormattingEnabled = true;
 			this->checkedListBox1->Location = System::Drawing::Point(103, 127);
 			this->checkedListBox1->Name = L"checkedListBox1";
 			this->checkedListBox1->Size = System::Drawing::Size(247, 154);
 			this->checkedListBox1->TabIndex = 3;
+			// 
+			// checkedListBox2
+			// 
 			this->checkedListBox2->FormattingEnabled = true;
 			this->checkedListBox2->Location = System::Drawing::Point(554, 127);
 			this->checkedListBox2->Name = L"checkedListBox2";
 			this->checkedListBox2->Size = System::Drawing::Size(247, 154);
 			this->checkedListBox2->TabIndex = 4;
+			// 
+			// Frm_Execucao
+			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1029, 607);
 			this->Controls->Add(this->checkedListBox2);
 			this->Controls->Add(this->checkedListBox1);
 			this->Controls->Add(this->button1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Frm_Execucao";
 			this->Text = L"Frm_Execucao";
 			this->ResumeLayout(false);

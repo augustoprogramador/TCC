@@ -2,6 +2,7 @@
 #include "Frm_Imagem.h"
 #include "Frm_Algoritmos.h"
 #include "Frm_Configuracoes.h"
+#include "Frm_Execucao.h"
 
 namespace SegmentationSoft {
 
@@ -230,12 +231,12 @@ namespace SegmentationSoft {
 			form->Show();
 		}
 		private: System::Void lbl_execucao_Click(System::Object^ sender, System::EventArgs^ e) {
-			Frm_Algoritmos^ form = gcnew Frm_Algoritmos();
+			Frm_Execucao^ form = gcnew Frm_Execucao();
 			menu_ativo->Controls->Clear();
 			form->TopLevel = false;
 			menu_ativo->Controls->Add(form);
 			form->Height = sc_tela_principal->Panel2->Height;
 			form->Show();
 		}
-};
+	};
 }
