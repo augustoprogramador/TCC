@@ -404,5 +404,5 @@ FodyWeavers.xsd
 *.gif
 *.png
 
-/algoritmos/*
-/imagens/*
+algoritmos/
+imagens/
