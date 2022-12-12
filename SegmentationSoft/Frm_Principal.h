@@ -82,6 +82,7 @@ namespace SegmentationSoft {
 			// 
 			// sc_tela_principal.Panel1
 			// 
+			this->sc_tela_principal->Panel1->BackColor = System::Drawing::Color::LightSkyBlue;
 			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_resultado);
 			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_configs);
 			this->sc_tela_principal->Panel1->Controls->Add(this->lbl_imagem);
@@ -100,13 +101,14 @@ namespace SegmentationSoft {
 			this->lbl_resultado->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbl_resultado->AutoSize = true;
-			this->lbl_resultado->BackColor = System::Drawing::SystemColors::Control;
-			this->lbl_resultado->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_resultado->BackColor = System::Drawing::Color::White;
+			this->lbl_resultado->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->lbl_resultado->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbl_resultado->Location = System::Drawing::Point(77, 243);
 			this->lbl_resultado->Margin = System::Windows::Forms::Padding(0);
 			this->lbl_resultado->Name = L"lbl_resultado";
-			this->lbl_resultado->Size = System::Drawing::Size(119, 24);
+			this->lbl_resultado->Size = System::Drawing::Size(105, 28);
 			this->lbl_resultado->TabIndex = 5;
 			this->lbl_resultado->Text = L"Resultado";
 			this->lbl_resultado->Visible = false;
@@ -116,13 +118,14 @@ namespace SegmentationSoft {
 			this->lbl_configs->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbl_configs->AutoSize = true;
-			this->lbl_configs->BackColor = System::Drawing::SystemColors::Control;
-			this->lbl_configs->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_configs->BackColor = System::Drawing::Color::White;
+			this->lbl_configs->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->lbl_configs->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbl_configs->Location = System::Drawing::Point(77, 444);
 			this->lbl_configs->Margin = System::Windows::Forms::Padding(0);
 			this->lbl_configs->Name = L"lbl_configs";
-			this->lbl_configs->Size = System::Drawing::Size(99, 24);
+			this->lbl_configs->Size = System::Drawing::Size(88, 28);
 			this->lbl_configs->TabIndex = 4;
 			this->lbl_configs->Text = L"Configs.";
 			this->lbl_configs->Click += gcnew System::EventHandler(this, &Frm_Principal::lbl_configs_Click);
@@ -132,13 +135,14 @@ namespace SegmentationSoft {
 			this->lbl_imagem->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbl_imagem->AutoSize = true;
-			this->lbl_imagem->BackColor = System::Drawing::SystemColors::Control;
-			this->lbl_imagem->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_imagem->BackColor = System::Drawing::Color::White;
+			this->lbl_imagem->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->lbl_imagem->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbl_imagem->Location = System::Drawing::Point(77, 123);
 			this->lbl_imagem->Margin = System::Windows::Forms::Padding(0);
 			this->lbl_imagem->Name = L"lbl_imagem";
-			this->lbl_imagem->Size = System::Drawing::Size(96, 24);
+			this->lbl_imagem->Size = System::Drawing::Size(87, 28);
 			this->lbl_imagem->TabIndex = 3;
 			this->lbl_imagem->Text = L"Imagem";
 			this->lbl_imagem->Click += gcnew System::EventHandler(this, &Frm_Principal::lbl_imagem_Click);
@@ -148,13 +152,14 @@ namespace SegmentationSoft {
 			this->lbl_execucao->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbl_execucao->AutoSize = true;
-			this->lbl_execucao->BackColor = System::Drawing::SystemColors::Control;
-			this->lbl_execucao->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_execucao->BackColor = System::Drawing::Color::White;
+			this->lbl_execucao->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->lbl_execucao->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbl_execucao->Location = System::Drawing::Point(77, 182);
 			this->lbl_execucao->Margin = System::Windows::Forms::Padding(0);
 			this->lbl_execucao->Name = L"lbl_execucao";
-			this->lbl_execucao->Size = System::Drawing::Size(114, 24);
+			this->lbl_execucao->Size = System::Drawing::Size(98, 28);
 			this->lbl_execucao->TabIndex = 2;
 			this->lbl_execucao->Text = L"Execução";
 			this->lbl_execucao->Click += gcnew System::EventHandler(this, &Frm_Principal::lbl_execucao_Click);
@@ -164,19 +169,21 @@ namespace SegmentationSoft {
 			this->lbl_algoritmos->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbl_algoritmos->AutoSize = true;
-			this->lbl_algoritmos->BackColor = System::Drawing::SystemColors::Control;
-			this->lbl_algoritmos->Font = (gcnew System::Drawing::Font(L"Bookman Old Style", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->lbl_algoritmos->BackColor = System::Drawing::Color::White;
+			this->lbl_algoritmos->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->lbl_algoritmos->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->lbl_algoritmos->Location = System::Drawing::Point(77, 71);
 			this->lbl_algoritmos->Margin = System::Windows::Forms::Padding(0);
 			this->lbl_algoritmos->Name = L"lbl_algoritmos";
-			this->lbl_algoritmos->Size = System::Drawing::Size(130, 24);
+			this->lbl_algoritmos->Size = System::Drawing::Size(115, 28);
 			this->lbl_algoritmos->TabIndex = 0;
 			this->lbl_algoritmos->Text = L"Algoritmos";
 			this->lbl_algoritmos->Click += gcnew System::EventHandler(this, &Frm_Principal::lbl_algoritmos_Click);
 			// 
 			// menu_ativo
 			// 
+			this->menu_ativo->BackColor = System::Drawing::Color::AliceBlue;
 			this->menu_ativo->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->menu_ativo->Location = System::Drawing::Point(0, 0);
 			this->menu_ativo->Name = L"menu_ativo";

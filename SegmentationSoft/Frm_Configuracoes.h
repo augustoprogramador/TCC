@@ -92,12 +92,15 @@ namespace SegmentationSoft {
 			// 
 			// btn_compilar
 			// 
-			this->btn_compilar->Location = System::Drawing::Point(157, 289);
+			this->btn_compilar->BackColor = System::Drawing::Color::White;
+			this->btn_compilar->Font = (gcnew System::Drawing::Font(L"Candara", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btn_compilar->Location = System::Drawing::Point(210, 250);
 			this->btn_compilar->Name = L"btn_compilar";
-			this->btn_compilar->Size = System::Drawing::Size(75, 23);
+			this->btn_compilar->Size = System::Drawing::Size(86, 31);
 			this->btn_compilar->TabIndex = 2;
 			this->btn_compilar->Text = L"Compilar";
-			this->btn_compilar->UseVisualStyleBackColor = true;
+			this->btn_compilar->UseVisualStyleBackColor = false;
 			this->btn_compilar->Click += gcnew System::EventHandler(this, &Frm_Configuracoes::btn_compilar_Click);
 			// 
 			// gpb_celula
@@ -105,6 +108,7 @@ namespace SegmentationSoft {
 			this->gpb_celula->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
 				| System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
+			this->gpb_celula->BackColor = System::Drawing::Color::AliceBlue;
 			this->gpb_celula->Controls->Add(this->textBox1);
 			this->gpb_celula->Controls->Add(this->label1);
 			this->gpb_celula->Location = System::Drawing::Point(3, 3);
@@ -115,6 +119,8 @@ namespace SegmentationSoft {
 			// 
 			// tlp_campos
 			// 
+			this->tlp_campos->AutoSize = true;
+			this->tlp_campos->BackColor = System::Drawing::Color::AliceBlue;
 			this->tlp_campos->ColumnCount = 2;
 			this->tlp_campos->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
 			this->tlp_campos->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
@@ -122,8 +128,7 @@ namespace SegmentationSoft {
 			this->tlp_campos->Location = System::Drawing::Point(70, 65);
 			this->tlp_campos->Name = L"tlp_campos";
 			this->tlp_campos->RowCount = 1;
-			this->tlp_campos->AutoSize = 1;
-			this->tlp_campos->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::AutoSize)));
+			this->tlp_campos->RowStyles->Add((gcnew System::Windows::Forms::RowStyle()));
 			this->tlp_campos->Size = System::Drawing::Size(372, 100);
 			this->tlp_campos->TabIndex = 6;
 			// 
@@ -131,6 +136,7 @@ namespace SegmentationSoft {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::LightSkyBlue;
 			this->ClientSize = System::Drawing::Size(939, 550);
 			this->Controls->Add(this->tlp_campos);
 			this->Controls->Add(this->btn_compilar);
@@ -142,6 +148,7 @@ namespace SegmentationSoft {
 			this->gpb_celula->PerformLayout();
 			this->tlp_campos->ResumeLayout(false);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 
