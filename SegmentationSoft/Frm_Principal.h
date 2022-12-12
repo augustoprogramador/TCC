@@ -184,7 +184,6 @@ namespace SegmentationSoft {
 			// menu_ativo
 			// 
 			this->menu_ativo->BackColor = System::Drawing::Color::AliceBlue;
-			this->menu_ativo->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->menu_ativo->Location = System::Drawing::Point(0, 0);
 			this->menu_ativo->Name = L"menu_ativo";
 			this->menu_ativo->Size = System::Drawing::Size(677, 655);

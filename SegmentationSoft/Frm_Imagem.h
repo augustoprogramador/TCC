@@ -39,18 +39,18 @@ namespace SegmentationSoft {
 		}
 	private: System::Windows::Forms::Label^ label1;
 	protected:
-	private: System::Windows::Forms::Label^ label2;
+
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
 	private: System::Windows::Forms::Button^ btn_adicionar;
 	private: System::Windows::Forms::Button^ btn_remover_entrada;
 
 	private: System::Windows::Forms::ListBox^ lb_entrada;
-	private: System::Windows::Forms::ListBox^ lb_saida;
-	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
-	private: System::Windows::Forms::Button^ btn_adicionar_saida;
-	private: System::Windows::Forms::Button^ btn_remover_saida;
 
-	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
+	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
+
+
+
+
 
 	protected:
 
@@ -68,18 +68,12 @@ namespace SegmentationSoft {
 		void InitializeComponent(void)
 		{
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->btn_adicionar = (gcnew System::Windows::Forms::Button());
 			this->btn_remover_entrada = (gcnew System::Windows::Forms::Button());
 			this->lb_entrada = (gcnew System::Windows::Forms::ListBox());
-			this->lb_saida = (gcnew System::Windows::Forms::ListBox());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->btn_adicionar_saida = (gcnew System::Windows::Forms::Button());
-			this->btn_remover_saida = (gcnew System::Windows::Forms::Button());
-			this->tableLayoutPanel2 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->tableLayoutPanel1->SuspendLayout();
-			this->tableLayoutPanel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -92,17 +86,6 @@ namespace SegmentationSoft {
 			this->label1->Size = System::Drawing::Size(83, 26);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Entrada";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Candara", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(354, 25);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(60, 26);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Saída";
 			// 
 			// tableLayoutPanel1
 			// 
@@ -162,67 +145,9 @@ namespace SegmentationSoft {
 			this->lb_entrada->Size = System::Drawing::Size(197, 238);
 			this->lb_entrada->TabIndex = 3;
 			// 
-			// lb_saida
-			// 
-			this->lb_saida->BackColor = System::Drawing::Color::AliceBlue;
-			this->lb_saida->FormattingEnabled = true;
-			this->lb_saida->Location = System::Drawing::Point(291, 64);
-			this->lb_saida->Name = L"lb_saida";
-			this->lb_saida->Size = System::Drawing::Size(197, 238);
-			this->lb_saida->TabIndex = 4;
-			// 
 			// openFileDialog1
 			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
-			// 
-			// btn_adicionar_saida
-			// 
-			this->btn_adicionar_saida->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->btn_adicionar_saida->BackColor = System::Drawing::Color::White;
-			this->btn_adicionar_saida->Font = (gcnew System::Drawing::Font(L"Candara", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btn_adicionar_saida->Location = System::Drawing::Point(3, 3);
-			this->btn_adicionar_saida->Name = L"btn_adicionar_saida";
-			this->btn_adicionar_saida->Size = System::Drawing::Size(92, 41);
-			this->btn_adicionar_saida->TabIndex = 0;
-			this->btn_adicionar_saida->Text = L"Adicionar";
-			this->btn_adicionar_saida->UseVisualStyleBackColor = false;
-			this->btn_adicionar_saida->Click += gcnew System::EventHandler(this, &Frm_Imagem::btn_adicionar_saida_Click);
-			// 
-			// btn_remover_saida
-			// 
-			this->btn_remover_saida->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->btn_remover_saida->BackColor = System::Drawing::Color::White;
-			this->btn_remover_saida->Font = (gcnew System::Drawing::Font(L"Candara", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->btn_remover_saida->Location = System::Drawing::Point(101, 3);
-			this->btn_remover_saida->Name = L"btn_remover_saida";
-			this->btn_remover_saida->Size = System::Drawing::Size(93, 41);
-			this->btn_remover_saida->TabIndex = 1;
-			this->btn_remover_saida->Text = L"Remover";
-			this->btn_remover_saida->UseVisualStyleBackColor = false;
-			this->btn_remover_saida->Click += gcnew System::EventHandler(this, &Frm_Imagem::btn_remover_saida_Click);
-			// 
-			// tableLayoutPanel2
-			// 
-			this->tableLayoutPanel2->ColumnCount = 2;
-			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel2->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
-				50)));
-			this->tableLayoutPanel2->Controls->Add(this->btn_adicionar_saida, 0, 0);
-			this->tableLayoutPanel2->Controls->Add(this->btn_remover_saida, 1, 0);
-			this->tableLayoutPanel2->Location = System::Drawing::Point(291, 308);
-			this->tableLayoutPanel2->Name = L"tableLayoutPanel2";
-			this->tableLayoutPanel2->RowCount = 1;
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 50)));
-			this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
-			this->tableLayoutPanel2->Size = System::Drawing::Size(197, 47);
-			this->tableLayoutPanel2->TabIndex = 5;
 			// 
 			// Frm_Imagem
 			// 
@@ -230,18 +155,14 @@ namespace SegmentationSoft {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LightSkyBlue;
 			this->ClientSize = System::Drawing::Size(689, 465);
-			this->Controls->Add(this->tableLayoutPanel2);
-			this->Controls->Add(this->lb_saida);
 			this->Controls->Add(this->lb_entrada);
 			this->Controls->Add(this->tableLayoutPanel1);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Frm_Imagem";
 			this->Text = L"MyForm1";
 			this->Load += gcnew System::EventHandler(this, &Frm_Imagem::Frm_Imagem_Load);
 			this->tableLayoutPanel1->ResumeLayout(false);
-			this->tableLayoutPanel2->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -336,7 +257,6 @@ namespace SegmentationSoft {
 		DirectoryInfo^ saida_dir = gcnew DirectoryInfo("./imagens/saida");
 
 		lb_entrada->Items->Clear();
-		lb_saida->Items->Clear();
 		for each (FileInfo ^ f in entrada_dir->GetFiles())
 		{
 			String^ nomeArquivo = Path::GetFileNameWithoutExtension(f->FullName);
@@ -347,7 +267,6 @@ namespace SegmentationSoft {
 		{
 			String^ nomeArquivo = Path::GetFileNameWithoutExtension(f->FullName);
 			nomeArquivo = nomeArquivo->ToUpper();
-			lb_saida->Items->Add(nomeArquivo);
 		};
 	}
 	

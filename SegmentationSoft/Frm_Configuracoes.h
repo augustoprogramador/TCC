@@ -119,7 +119,10 @@ namespace SegmentationSoft {
 			// 
 			// tlp_campos
 			// 
-			this->tlp_campos->AutoSize = true;
+			this->tlp_campos->AutoScroll = false;
+			this->tlp_campos->HorizontalScroll->Enabled = false;
+			this->tlp_campos->HorizontalScroll->Visible = false;
+			this->tlp_campos->AutoScroll = true;
 			this->tlp_campos->BackColor = System::Drawing::Color::AliceBlue;
 			this->tlp_campos->ColumnCount = 2;
 			this->tlp_campos->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent, 50)));
