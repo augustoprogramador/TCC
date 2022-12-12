@@ -62,15 +62,19 @@ namespace SegmentationSoft {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(321, 329);
+			this->button1->BackColor = System::Drawing::Color::White;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Candara", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(391, 340);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(136, 45);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Executar";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			// 
 			// checkedListBox1
 			// 
+			this->checkedListBox1->BackColor = System::Drawing::Color::AliceBlue;
 			this->checkedListBox1->FormattingEnabled = true;
 			this->checkedListBox1->Location = System::Drawing::Point(103, 127);
 			this->checkedListBox1->Name = L"checkedListBox1";
@@ -79,6 +83,7 @@ namespace SegmentationSoft {
 			// 
 			// checkedListBox2
 			// 
+			this->checkedListBox2->BackColor = System::Drawing::Color::AliceBlue;
 			this->checkedListBox2->FormattingEnabled = true;
 			this->checkedListBox2->Location = System::Drawing::Point(554, 127);
 			this->checkedListBox2->Name = L"checkedListBox2";
@@ -89,6 +94,7 @@ namespace SegmentationSoft {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::LightSkyBlue;
 			this->ClientSize = System::Drawing::Size(1029, 607);
 			this->Controls->Add(this->checkedListBox2);
 			this->Controls->Add(this->checkedListBox1);
